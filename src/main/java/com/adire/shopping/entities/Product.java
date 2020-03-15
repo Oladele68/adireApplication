@@ -1,109 +1,77 @@
 package com.adire.shopping.entities;
 
-public class Product
-{
-	
-	private String ProductName;
-	private String modelYear;
-	//private String StyleDetail;
-	//private String Brand;
-	
-	private int ProductID;	
-	private double ListPrice;	
-	
-	// public attributes
-	public int ImageID;
-	public int BrandID;
-	public int CategoryID;
-	public int DesignerID;
-	
-	//Related Objects declaration
-	Image img;
-	Brand brd;	
-	Designer dsn;
-	
-	public Product()
-	{	
-		int id = 0;
-		String name = "";
-		int image = 0;
-		int categoryid = 0;
-				
-		String modelyear= "";
-		double lprice = 0;
-		
-		
-		
-		ProductID = id;
-		ProductName = name;
-		ImageID = image;		
-		CategoryID = categoryid;
-		
-		modelYear = modelyear;
-		ListPrice = lprice;
-		
-		
-		//
-		ImageID = img.getImageID();
-		BrandID = brd.getBrandID();
-		DesignerID = dsn.getDesignerID();
-		
-		
-	}
-	
-	Product( int id, String name,int categoryid,String modelyear,double lprice, int styleid, int brdid )
-	{
-		ProductID = id;
-		ProductName = name;
-		
-		CategoryID = categoryid;
-		
-		modelYear = modelyear;
-		ListPrice = lprice;
-		
-		
-		//
-		ImageID = img.getImageID();
-		BrandID = brd.getBrandID();
-		DesignerID = dsn.getDesignerID();
-	}
-	
+public class Product {
+
+	private int productID;
+	private double listPrice;
+	private String productCode;
+	private String productShortDescription;
+	private String productLongDescription;
+	private String imageCode;
+	private String brandCode;
+	private String designerCode;
+
 	public int getProductID() {
-		return ProductID;
+		return productID;
 	}
+
 	public void setProductID(int productID) {
-		ProductID = productID;
+		this.productID = productID;
 	}
-	public String getProductName() {
-		return ProductName;
-	}
-	public void setProductName(String productName) {
-		ProductName = productName;
-	}
-		
-	public String getModelYear() {
-		return modelYear;
-	}
-	public void setModelYear(String modelYear) {
-		this.modelYear = modelYear;
-	}
+
 	public double getListPrice() {
-		return ListPrice;
+		return listPrice;
 	}
+
 	public void setListPrice(double listPrice) {
-		ListPrice = listPrice;
-	}
-	
-	public int getImageID() {
-		return ImageID = img.getImageID();
+		this.listPrice = listPrice;
 	}
 
-	
+	public String getProductCode() {
+		return productCode;
+	}
 
-	/*public void setImageID(int imageID) {
-		ImageID = imageID;
-	}*/
-	
-	
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+	}
 
+	public String getProductShortDescription() {
+		return productShortDescription;
+	}
+
+	public void setProductShortDescription(String productShortDescription) {
+		this.productShortDescription = productShortDescription;
+	}
+
+	public String getProductLongDescription() {
+		return productLongDescription;
+	}
+
+	public void setProductLongDescription(String productLongDescription) {
+		this.productLongDescription = productLongDescription;
+	}
+
+	public String getImageCode() {
+		return imageCode;
+	}
+
+	public void setImageCode(String imageCode) {
+		this.imageCode = imageCode;
+	}
+
+	public String getBrandCode() {
+		return brandCode;
+	}
+
+	public void setBrandCode(String brandCode) {
+		this.brandCode = brandCode;
+	}
+
+	public String getDesignerCode() {
+		return designerCode;
+	}
+
+	public void setDesignerCode(String designerCode) {
+		this.designerCode = designerCode;
+	}
 }
