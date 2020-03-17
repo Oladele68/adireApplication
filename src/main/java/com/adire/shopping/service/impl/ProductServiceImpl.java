@@ -16,4 +16,24 @@ public class ProductServiceImpl implements ProductService {
         productList = productDao.getProductDetailsByDesigner(designerCode);
         return productList;
     }
+
+    @Override
+    public List<ProductDto> getProductDetailsByBrand(String brandCode) throws SQLException {
+        ProductDaoImpl productDao = new ProductDaoImpl();
+        List<ProductDto> productList = new ArrayList<ProductDto>();
+        productList = productDao.getProductDetailsByBrand(brandCode);
+        return productList;
+    }
+
+        @Override
+        public ProductDto getSingleProductDetails(String productCode) throws SQLException {
+            ProductDaoImpl productDao = new ProductDaoImpl();
+             ProductDto productDto = new ProductDto();
+            productDto = productDao.getSingleProductDetails(productCode);
+            return productDto;
+
+
+        }
+
+
 }
