@@ -1,6 +1,6 @@
 package com.adire.shopping.entities;
 
-public class OrderAndStyle
+public class Order
 {
 	private int OrderAndStyleID;
 	
@@ -27,10 +27,9 @@ public class OrderAndStyle
 	Designer designer;
 	Size size;
 	Store store;
-	Staff staff;
-	
+
 	// Constructor
-	OrderAndStyle()
+	Order()
 	{
 		int orderAndstyleid =0;
 		
@@ -48,8 +47,7 @@ public class OrderAndStyle
 		DesignerID = designer.getDesignerID();
 		SizeID = size.getSizeID();
 		StoreID = store.getStoreID();
-		StaffID = staff.getStaffID();		
-		
+
 	}
 	
 	
