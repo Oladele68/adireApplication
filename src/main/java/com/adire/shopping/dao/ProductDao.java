@@ -5,10 +5,11 @@ import com.adire.shopping.dto.ProductDto;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface ProductDao {
+public interface ProductDao
+{
    List<ProductDto> getProductDetailsByDesigner(String designerCode) throws SQLException;
 
-    List<ProductDto> getProductDetailsByStylist(String stylistCode);
+    List<ProductDto> getProductDetailsByBrand(String brandCode) throws SQLException;
 
-    ProductDto getSingleProductDetails(String productCode);
+    ProductDto getSingleProductDetails(String productCode) throws SQLException;
 }

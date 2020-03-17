@@ -9,7 +9,8 @@ import java.util.List;
 
 public class ProductFacadeImpl implements ProductFacade {
     @Override
-    public List<ProductDto> getProductDetailsByDesigner(String designerCode) {
+    public List<ProductDto> getProductDetailsByDesigner(String designerCode)
+    {
         ProductServiceImpl productService = new ProductServiceImpl();
         List <ProductDto> productDtoList = new ArrayList<ProductDto>();
        try{
