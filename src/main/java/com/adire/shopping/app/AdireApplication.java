@@ -17,7 +17,10 @@ public class AdireApplication {
 		try
 		{
 			adireApplication.getProductByDesignCode("AD_1");
-			for(ProductDto product : productList){
+
+			for(ProductDto product : productList)
+			{
+
 				System.out.println("***********  Product Short Description is *********" + product.getProductShortDescription() );
 				System.out.println("***********  Product price is *********" + product.getListPrice() );
 				System.out.println("***********  Product Long Description is *********" + product.getProductLongDescription() );
