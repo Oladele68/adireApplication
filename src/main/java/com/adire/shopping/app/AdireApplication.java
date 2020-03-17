@@ -16,11 +16,9 @@ public class AdireApplication {
 		AdireApplication adireApplication = new AdireApplication();
 		try
 		{
-			adireApplication.getProductByDesignCode("AD_1");
-
+			productList = adireApplication.getProductByDesignCode("Designer01");
 			for(ProductDto product : productList)
 			{
-
 				System.out.println("***********  Product Short Description is *********" + product.getProductShortDescription() );
 				System.out.println("***********  Product price is *********" + product.getListPrice() );
 				System.out.println("***********  Product Long Description is *********" + product.getProductLongDescription() );
@@ -28,6 +26,38 @@ public class AdireApplication {
 				System.out.println("***********  Product designer code is *********" + product.getDesignerCode() );
 				System.out.println("***********  Product image code  is *********" + product.getImageCode() );
 			}
+		}catch (Exception ex){
+			ex.printStackTrace();
+		}
+
+		//product by brand
+		try
+		{
+			productList = adireApplication.getProductByBrand("MoyoCode");
+			for(ProductDto product : productList)
+			{
+				System.out.println("***********  Product Short Description is *********" + product.getProductShortDescription() );
+				System.out.println("***********  Product price is *********" + product.getListPrice() );
+				System.out.println("***********  Product Long Description is *********" + product.getProductLongDescription() );
+				System.out.println("***********  Product Code is *********" + product.getProductCode() );
+				System.out.println("***********  Product designer code is *********" + product.getDesignerCode() );
+				System.out.println("***********  Product image code  is *********" + product.getImageCode() );
+			}
+		}catch (Exception ex){
+			ex.printStackTrace();
+		}
+
+
+		//single product
+		try
+		{
+			ProductDto product = adireApplication.getSingleProductDetails("MOPro");
+			System.out.println("***********  Product Short Description is *********" + product.getProductShortDescription() );
+			System.out.println("***********  Product price is *********" + product.getListPrice() );
+			System.out.println("***********  Product Long Description is *********" + product.getProductLongDescription() );
+			System.out.println("***********  Product Code is *********" + product.getProductCode() );
+			System.out.println("***********  Product designer code is *********" + product.getDesignerCode() );
+			System.out.println("***********  Product image code  is *********" + product.getImageCode() );
 		}catch (Exception ex){
 			ex.printStackTrace();
 		}
@@ -42,5 +72,35 @@ public class AdireApplication {
 		return productList;
 
 	}
+
+	public List<ProductDto> getProductByBrand(String brandCode){
+		List<ProductDto> productList = new ArrayList<ProductDto>();
+		ProductFacadeImpl productFacade = new ProductFacadeImpl();
+		try{
+			productList = productFacade.getProductDetailsByDesigner(brandCode);
+			return productList;
+		}catch (Exception ex){
+			ex.printStackTrace();
+		}
+		return null;
+
+	}
+
+	public ProductDto getSingleProductDetails(String productCode)  {
+		ProductDto productDto = new ProductDto();
+		ProductFacadeImpl productFacade = new ProductFacadeImpl();
+
+		try{
+			productDto = productFacade.getSingleProductDetails(productCode);
+			return productDto;
+		}catch (Exception ex){
+			ex.printStackTrace();
+		}
+		return null;
+	}
+
+
+
+
 
 }
