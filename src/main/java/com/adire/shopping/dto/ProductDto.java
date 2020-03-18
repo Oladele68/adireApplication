@@ -7,71 +7,72 @@ public class ProductDto {
     private String productCode;
     private String productShortDescription;
     private String productLongDescription;
-    private String imageCode;
-    private String brandCode;
-    private String designerCode;
+    private String imageDescription;
+    private String brandDescription;
+    private String designerDesription;
+
 
     public int getProductID() {
         return productID;
-    }
-
-    public double getListPrice() {
-        return listPrice;
-    }
-
-    public String getProductCode() {
-        return productCode;
-    }
-
-    public String getProductShortDescription() {
-        return productShortDescription;
-    }
-
-    public String getProductLongDescription() {
-        return productLongDescription;
-    }
-
-    public String getImageCode() {
-        return imageCode;
-    }
-
-    public String getBrandCode() {
-        return brandCode;
-    }
-
-    public String getDesignerCode() {
-        return designerCode;
     }
 
     public void setProductID(int productID) {
         this.productID = productID;
     }
 
+    public double getListPrice() {
+        return listPrice;
+    }
+
     public void setListPrice(double listPrice) {
         this.listPrice = listPrice;
+    }
+
+    public String getProductCode() {
+        return productCode;
     }
 
     public void setProductCode(String productCode) {
         this.productCode = productCode;
     }
 
+    public String getProductShortDescription() {
+        return productShortDescription;
+    }
+
     public void setProductShortDescription(String productShortDescription) {
         this.productShortDescription = productShortDescription;
+    }
+
+    public String getProductLongDescription() {
+        return productLongDescription;
     }
 
     public void setProductLongDescription(String productLongDescription) {
         this.productLongDescription = productLongDescription;
     }
 
-    public void setImageCode(String imageCode) {
-        this.imageCode = imageCode;
+    public String getImageDescription() {
+        return imageDescription;
     }
 
-    public void setBrandCode(String brandCode) {
-        this.brandCode = brandCode;
+    public void setImageDescription(String imageDescription) {
+        this.imageDescription = imageDescription;
     }
 
-    public void setDesignerCode(String designerCode) {
-        this.designerCode = designerCode;
+    public String getBrandDescription() {
+        return brandDescription;
+    }
+
+    public void setBrandDescription(String brandDescription) {
+        this.brandDescription = brandDescription;
+    }
+
+    public String getDesignerDesription() {
+        return designerDesription;
+    }
+
+    public void setDesignerDesription(String designerDesription) {
+        this.designerDesription = designerDesription;
     }
 }
