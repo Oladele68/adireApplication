@@ -25,15 +25,15 @@ public class ProductServiceImpl implements ProductService {
         return productList;
     }
 
-    @Override
-    public ProductDto getSingleProductDetails(String productCode) throws SQLException {
-        ProductDaoImpl productDao = new ProductDaoImpl();
-        ProductDto productDto = new ProductDto();
-        productDto = productDao.getSingleProductDetails(productCode);
-        return productDto;
+        @Override
+        public ProductDto getSingleProductDetails(String productCode) throws SQLException {
+            ProductDaoImpl productDao = new ProductDaoImpl();
+             ProductDto productDto = new ProductDto();
+            productDto = productDao.getSingleProductDetails(productCode);
+            return productDto;
 
 
-    }
+        }
 
 
 }
