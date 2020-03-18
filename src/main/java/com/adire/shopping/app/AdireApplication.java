@@ -65,7 +65,7 @@ public class AdireApplication {
 
 
 
-	public List<ProductDto> getProductByDesignCode(String designCode) throws SQLException {
+	private List<ProductDto> getProductByDesignCode(String designCode) throws SQLException {
 		List<ProductDto> productList = new ArrayList<ProductDto>();
 		ProductFacadeImpl productFacade = new ProductFacadeImpl();
 		productList = productFacade.getProductDetailsByDesigner(designCode);
@@ -73,7 +73,7 @@ public class AdireApplication {
 
 	}
 
-	public List<ProductDto> getProductByBrand(String brandCode){
+	private List<ProductDto> getProductByBrand(String brandCode){
 		List<ProductDto> productList = new ArrayList<ProductDto>();
 		ProductFacadeImpl productFacade = new ProductFacadeImpl();
 		try{
@@ -86,7 +86,7 @@ public class AdireApplication {
 
 	}
 
-	public ProductDto getSingleProductDetails(String productCode)  {
+	private ProductDto getSingleProductDetails(String productCode)  {
 		ProductDto productDto = new ProductDto();
 		ProductFacadeImpl productFacade = new ProductFacadeImpl();
 
