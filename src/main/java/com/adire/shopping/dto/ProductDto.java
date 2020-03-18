@@ -11,7 +11,6 @@ public class ProductDto {
     private String brandDescription;
     private String designerDesription;
 
-
     public int getProductID() {
         return productID;
     }
