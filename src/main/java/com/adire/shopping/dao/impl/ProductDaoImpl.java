@@ -4,6 +4,7 @@ import com.adire.shopping.constants.AdireSQLQueries;
 import com.adire.shopping.dao.ProductDao;
 import com.adire.shopping.dto.ProductDto;
 
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +40,7 @@ public class ProductDaoImpl implements ProductDao {
                 productDto.setProductLongDescription(resultSet.getString("ProductLongDescription"));
                 productDto.setImageDescription(resultSet.getString("ImageDescription"));
                 productDto.setBrandDescription(resultSet.getString("BrandDescription"));
-                productDto.setDesignerDesription(resultSet.getString("DesignerDescription"));
+                productDto.setDesignerDescription(resultSet.getString("DesignerDescription"));
                 productDto.setListPrice(resultSet.getDouble("ListPrice"));
                 productList.add(productDto);
         }
@@ -63,7 +64,7 @@ public class ProductDaoImpl implements ProductDao {
             productDto.setListPrice(rs.getDouble("ListPrice"));
             productDto.setImageDescription(rs.getString("ImageDescription"));
             productDto.setBrandDescription(rs.getString("BrandDescription"));
-            productDto.setDesignerDesription(rs.getString("DesignerDescription"));
+            productDto.setDesignerDescription(rs.getString("DesignerDescription"));
             productListByBrand.add(productDto);
 
         }
@@ -90,7 +91,7 @@ public class ProductDaoImpl implements ProductDao {
             productDto.setListPrice(resultSet.getDouble("ListPrice"));
             productDto.setImageDescription(resultSet.getString("ImageDescription"));
             productDto.setBrandDescription(resultSet.getString("BrandDescription"));
-            productDto.setDesignerDesription(resultSet.getString("DesignerDescription"));
+            productDto.setDesignerDescription(resultSet.getString("DesignerDescription"));
 
         }
 

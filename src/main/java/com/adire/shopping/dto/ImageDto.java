@@ -1,7 +1,7 @@
-package com.adire.shopping.entities;
+package com.adire.shopping.dto;
 
 
-public class Image
+public class ImageDto
 {
 
     private int imageID;

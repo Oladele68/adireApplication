@@ -4,7 +4,6 @@ import com.adire.shopping.dto.ProductDto;
 import com.adire.shopping.facade.ProductFacade;
 import com.adire.shopping.service.impl.ProductServiceImpl;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 

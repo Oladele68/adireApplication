@@ -1,15 +1,15 @@
-package com.adire.shopping.entities;
+package com.adire.shopping.dto;
 
 import java.util.Date;
 import java.util.List;
 
-public class Order
+public class OrderDto
 {
     private String orderID;
     private String customerID;
     private int quantity;
     private String orderStatusDescription;
-    private List<Product> productList;
+    private List<ProductDto> productList;
     private Date orderDate;
     private Date shippedDate;
     private Date deliveryDate;
@@ -46,11 +46,11 @@ public class Order
         this.orderStatusDescription = orderStatusDescription;
     }
 
-    public List<Product> getProductList() {
+    public List<ProductDto> getProductList() {
         return productList;
     }
 
-    public void setProductList(List<Product> productList) {
+    public void setProductList(List<ProductDto> productList) {
         this.productList = productList;
     }
 

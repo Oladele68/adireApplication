@@ -1,7 +1,7 @@
-package com.adire.shopping.entities;
+package com.adire.shopping.dto;
 
 
-public class Stock
+public class StockDto
 {
     private int stockID;
     private int quantity;
