@@ -1,6 +1,6 @@
-package com.adire.shopping.entities;
+package com.adire.shopping.dto;
 
-public class Customer
+public class CustomerDto
 {
     private int customerID;
     private String firstName;
@@ -11,6 +11,11 @@ public class Customer
     private String zipCode;
     private String phone;
     private String email;
+    private String orderID;
+    private String orderTotalAmount;
+    private String orderStatusDescription;
+
+
 
 
     public int getCustomerID() {
@@ -83,5 +88,29 @@ public class Customer
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getOrderID() {
+        return orderID;
+    }
+
+    public void setOrderID(String orderID) {
+        this.orderID = orderID;
+    }
+
+    public String getOrderTotalAmount() {
+        return orderTotalAmount;
+    }
+
+    public void setOrderTotalAmount(String orderTotalAmount) {
+        this.orderTotalAmount = orderTotalAmount;
+    }
+
+    public String getOrderStatusDescription() {
+        return orderStatusDescription;
+    }
+
+    public void setOrderStatusDescription(String orderStatusDescription) {
+        this.orderStatusDescription = orderStatusDescription;
     }
 }

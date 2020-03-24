@@ -9,7 +9,7 @@ public class ProductDto {
     private String productLongDescription;
     private String imageDescription;
     private String brandDescription;
-    private String designerDesription;
+    private String designerDescription;
 
     public int getProductID() {
         return productID;
@@ -67,11 +67,11 @@ public class ProductDto {
         this.brandDescription = brandDescription;
     }
 
-    public String getDesignerDesription() {
-        return designerDesription;
+    public String getDesignerDescription() {
+        return designerDescription;
     }
 
-    public void setDesignerDesription(String designerDesription) {
-        this.designerDesription = designerDesription;
+    public void setDesignerDescription(String designerDesription) {
+        this.designerDescription = designerDesription;
     }
 }

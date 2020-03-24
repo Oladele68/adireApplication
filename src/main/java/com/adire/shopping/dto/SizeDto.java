@@ -1,6 +1,6 @@
-package com.adire.shopping.entities;
+package com.adire.shopping.dto;
 
-public class Size
+public class SizeDto
 {
     private int sizeID;
     private String sizeDetail;
