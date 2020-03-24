@@ -4,6 +4,7 @@ import com.adire.shopping.constants.AdireSQLQueries;
 import com.adire.shopping.dao.ProductDao;
 import com.adire.shopping.dto.ProductDto;
 
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,29 +20,29 @@ public class ProductDaoImpl implements ProductDao {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             connection = DriverManager.getConnection(AdireSQLQueries.JDBC_CONNECTION);
-        }catch (SQLException | ClassNotFoundException sqlException){
+            }catch (SQLException | ClassNotFoundException sqlException){
             sqlException.printStackTrace();
         }
-    }
+     }
 
     @Override
     public List<ProductDto> getProductDetailsByDesigner(String designerCode) throws SQLException {
         List <ProductDto> productList = new ArrayList<ProductDto>();
         PreparedStatement preparedStatement = connection.prepareStatement(AdireSQLQueries.PRODUCT_SQL_DESIGNERS);
-        preparedStatement.setString(1, designerCode);
+       preparedStatement.setString(1, designerCode);
         ResultSet resultSet = preparedStatement.executeQuery();
-        while(resultSet.next())
-        {
+            while(resultSet.next())
+            {
 
-            ProductDto productDto = new ProductDto();
-            productDto.setProductCode(resultSet.getString("ProductCode"));
-            productDto.setProductShortDescription(resultSet.getString("ProductShortDesc"));
-            productDto.setProductLongDescription(resultSet.getString("ProductLongDescription"));
-            productDto.setImageDescription(resultSet.getString("ImageDescription"));
-            productDto.setBrandDescription(resultSet.getString("BrandDescription"));
-            productDto.setDesignerDesription(resultSet.getString("DesignerDescription"));
-            productDto.setListPrice(resultSet.getDouble("ListPrice"));
-            productList.add(productDto);
+                ProductDto productDto = new ProductDto();
+                productDto.setProductCode(resultSet.getString("ProductCode"));
+                productDto.setProductShortDescription(resultSet.getString("ProductShortDesc"));
+                productDto.setProductLongDescription(resultSet.getString("ProductLongDescription"));
+                productDto.setImageDescription(resultSet.getString("ImageDescription"));
+                productDto.setBrandDescription(resultSet.getString("BrandDescription"));
+                productDto.setDesignerDescription(resultSet.getString("DesignerDescription"));
+                productDto.setListPrice(resultSet.getDouble("ListPrice"));
+                productList.add(productDto);
         }
         return productList;
     }
@@ -63,7 +64,7 @@ public class ProductDaoImpl implements ProductDao {
             productDto.setListPrice(rs.getDouble("ListPrice"));
             productDto.setImageDescription(rs.getString("ImageDescription"));
             productDto.setBrandDescription(rs.getString("BrandDescription"));
-            productDto.setDesignerDesription(rs.getString("DesignerDescription"));
+            productDto.setDesignerDescription(rs.getString("DesignerDescription"));
             productListByBrand.add(productDto);
 
         }
@@ -90,7 +91,7 @@ public class ProductDaoImpl implements ProductDao {
             productDto.setListPrice(resultSet.getDouble("ListPrice"));
             productDto.setImageDescription(resultSet.getString("ImageDescription"));
             productDto.setBrandDescription(resultSet.getString("BrandDescription"));
-            productDto.setDesignerDesription(resultSet.getString("DesignerDescription"));
+            productDto.setDesignerDescription(resultSet.getString("DesignerDescription"));
 
         }
 

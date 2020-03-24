@@ -1,0 +1,83 @@
+package com.adire.shopping.facade.impl;
+
+import com.adire.shopping.dto.CustomerDto;
+import com.adire.shopping.facade.CustomerFacade;
+import com.adire.shopping.service.impl.CustomerServiceImpl;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class CustomerFacadeImpl implements CustomerFacade
+{
+   /* @Override
+    public List<CustomerDto> getAllCustomerOrder(String customerCode) throws SQLException
+    {
+
+
+        CustomerServiceImpl customerService = new CustomerServiceImpl();
+        List<CustomerDto> customerDtoList = new ArrayList<CustomerDto>();
+        try{
+            customerDtoList = customerService.getAllCustomerOrder(customerCode);
+            return  customerDtoList;
+
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return null;
+    } */
+
+    @Override
+    public CustomerDto getSingleCustomerOrder(String customerCode) throws  SQLException
+    {
+
+
+        CustomerServiceImpl customerService = new CustomerServiceImpl();
+        CustomerDto customerDto = new CustomerDto();
+        try{
+            customerDto = customerService.getSingleCustomerOrder(customerCode);
+            return  customerDto;
+
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return null;
+
+    }
+
+    @Override
+    public List<CustomerDto> getAllCustomerOrderByBrand(String brandCode) throws SQLException
+    {
+        CustomerServiceImpl customerService = new CustomerServiceImpl();
+        List<CustomerDto> customerDtoList = new ArrayList<CustomerDto>();
+        try{
+            customerDtoList = customerService.getAllCustomerOrderByBrand(brandCode);
+            return  customerDtoList;
+
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return null;
+
+    }
+
+    @Override
+    public List<CustomerDto> getAllCustomerOrderByDesigner(String designerCode) throws SQLException
+    {
+        CustomerServiceImpl customerService = new CustomerServiceImpl();
+        List<CustomerDto> customerDtoList = new ArrayList<CustomerDto>();
+        try{
+            customerDtoList = customerService.getAllCustomerOrderByDesigner(designerCode);
+            return  customerDtoList;
+
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return null;
+
+    }
+}
