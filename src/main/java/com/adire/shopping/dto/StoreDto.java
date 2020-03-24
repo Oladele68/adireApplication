@@ -1,6 +1,6 @@
-package com.adire.shopping.entities;
+package com.adire.shopping.dto;
 
-public class Store
+public class StoreDto
 {
     private int storeID;
     private String storeName;

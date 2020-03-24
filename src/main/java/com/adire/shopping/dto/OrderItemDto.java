@@ -1,9 +1,9 @@
-package com.adire.shopping.entities;
+package com.adire.shopping.dto;
 
 
 import java.util.Date;
 
-public class OrderItem
+public class OrderItemDto
 {
   private int orderItemID;
   private int productID;

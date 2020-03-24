@@ -1,7 +1,9 @@
 package com.adire.shopping.app;
 
 
+import com.adire.shopping.dto.CustomerDto;
 import com.adire.shopping.dto.ProductDto;
+import com.adire.shopping.facade.impl.CustomerFacadeImpl;
 import com.adire.shopping.facade.impl.ProductFacadeImpl;
 
 import java.sql.SQLException;
@@ -12,7 +14,11 @@ public class AdireApplication {
 
 	public static void main(String[] args) {
 		List <ProductDto> productList = new ArrayList<ProductDto>();
+		List <CustomerDto> customerList = new ArrayList<CustomerDto>();
+
 		AdireApplication adireApplication = new AdireApplication();
+
+
 		try
 		{
 			productList = adireApplication.getProductByDesignCode("Designer01");
@@ -24,14 +30,13 @@ public class AdireApplication {
 				System.out.println("Product price is : " + product.getListPrice() );
 				System.out.println("Product Long Description is : " + product.getProductLongDescription() );
 				System.out.println("Product Code is : " + product.getProductCode() );
-				System.out.println("Product designer description is : " + product.getDesignerDesription() );
+				System.out.println("Product designer description is : " + product.getDesignerDescription() );
 				System.out.println("Product image description  is : " + product.getImageDescription() );
 			}
 		}catch (Exception ex){
 			ex.printStackTrace();
 		}
 
-		//product by brand
 		try
 		{
 			System.out.println("***********  Products MoyoCode Brand are  *********  " );
@@ -43,7 +48,7 @@ public class AdireApplication {
 				System.out.println("Product price is *********" + product.getListPrice() );
 				System.out.println("Product Long Description is *********" + product.getProductLongDescription() );
 				System.out.println("Product Code is *********" + product.getProductCode() );
-				System.out.println("Product designer description is *********" + product.getDesignerDesription() );
+				System.out.println("Product designer description is *********" + product.getDesignerDescription() );
 				System.out.println("Product image description  is *********" + product.getImageDescription() );
 			}
 		}catch (Exception ex){
@@ -51,7 +56,6 @@ public class AdireApplication {
 		}
 
 
-		//single product
 		try
 		{
 			System.out.println("***********  MOPro Product details are  *********  " );
@@ -61,10 +65,25 @@ public class AdireApplication {
 			System.out.println("Product price is : " + product.getListPrice() );
 			System.out.println("Product Long Description is : " + product.getProductLongDescription() );
 			System.out.println("Product Code is :" + product.getProductCode() );
-			System.out.println("Product designer description is : " + product.getDesignerDesription() );
+			System.out.println("Product designer description is : " + product.getDesignerDescription() );
 			System.out.println("Product image description  is : " + product.getImageDescription() );
 		}catch (Exception ex){
 			ex.printStackTrace();
+		}
+
+
+		System.out.println("***********  Customer Orders for Order Number 201  *********  " );
+
+		try {
+			customerList = adireApplication.getAllCustomerOrders("201");
+			for (CustomerDto customer : customerList) {
+				System.out.println("Order ID is : " + customer.getOrderID());
+				System.out.println("Order Status description is : " + customer.getOrderStatusDescription() );
+				System.out.println("Order total amount is  : " + customer.getOrderTotalAmount());
+				System.out.println("Customer name is  : " + customer.getFirstName() + customer.getLastName() );
+			}
+		}catch (Exception exception){
+
 		}
 	}
 
@@ -104,8 +123,20 @@ public class AdireApplication {
 		return null;
 	}
 
+	private List<CustomerDto> getAllCustomerOrders(String customerID) throws SQLException
+	{
+		List<CustomerDto> customerList = new ArrayList<CustomerDto>();
+		CustomerFacadeImpl customerFacade = new CustomerFacadeImpl();
+		try
+		{
+			customerList = customerFacade.getAllCustomerOrders(customerID);
+			return customerList;
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 
-
-
+		return null;
+	}
 
 }

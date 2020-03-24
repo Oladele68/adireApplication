@@ -1,6 +1,6 @@
-package com.adire.shopping.entities;
+package com.adire.shopping.dto;
 
-public class OrderStatus
+public class OrderStatusDto
 {
    private int orderStatusID;
    private String orderStatusCode;

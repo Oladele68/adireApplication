@@ -1,6 +1,6 @@
-package com.adire.shopping.entities;
+package com.adire.shopping.dto;
 
-public class Brand
+public class BrandDto
 {
     private int brandID;
     private String  brandCode;

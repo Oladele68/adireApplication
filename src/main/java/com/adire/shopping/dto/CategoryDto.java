@@ -1,6 +1,6 @@
-package com.adire.shopping.entities;
+package com.adire.shopping.dto;
 
-public class Category
+public class CategoryDto
 {
     private int categoryID;
     private String categoryCode;

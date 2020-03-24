@@ -1,7 +1,7 @@
-package com.adire.shopping.entities;
+package com.adire.shopping.dto;
 
 
-public class Designer
+public class DesignerDto
 {
   private int designerID;
   private String designerCode;
